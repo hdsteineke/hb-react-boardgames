@@ -25,7 +25,6 @@ export default function AuthPage({ setUser }) {
 
     const userData = await signUp(email, password);
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
-    console.log(userData, 'blue');
     
     setUser(userData);
   }
@@ -35,6 +34,7 @@ export default function AuthPage({ setUser }) {
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
       <form onSubmit={handleSignIn}>
+        <h3>Sign In</h3>
         <label>
             Email
           {/* on change, update the form state for email */}
@@ -50,6 +50,7 @@ export default function AuthPage({ setUser }) {
       </form>
 
       <form onSubmit={handleSignUp}>
+        <h3>Sign Up</h3>
         <label>
             Email
           {/* on change, update the form state for email */}

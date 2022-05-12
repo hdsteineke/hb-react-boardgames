@@ -23,7 +23,7 @@ export default function App() {
   // add a useEffect to get the user and inject the user object into state on load
   useEffect(() => {
     const userData = getUser();
-    console.log(userData, 'pink');
+
     if (userData) {
       setUser(userData);
     }
@@ -42,6 +42,18 @@ export default function App() {
       <div className='App'>
         <header>
           {/* if there is a user in state, render out a link to the board games list, the create page, and add a button to let the user logout */}
+          {user
+            ? <nav>
+              <ul>
+                <li>
+                  <NavLink exact activeClassName="current-page" to="/board-games">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink exact activeClassName="current-page" to="/create">Add Game</NavLink>
+                </li>
+              </ul>
+            </nav>
+            : <AuthPage setUser={setUser} />}
           <button onClick={handleLogout}>Logout</button>
         </header>
         <main>
