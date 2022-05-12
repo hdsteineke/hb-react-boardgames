@@ -17,10 +17,10 @@ export default function ListPage({ boardgames }) {
   }, [gameCollection]);
 
   return (
-    <div className='list games'>
+    <div className='list-games'>
       {/* map through the games in state and render Game components */}
-      {boardgames.map((boardgame, i) => 
-        <Game key={`${boardgame}-${i}`} boardgame={boardgame} 
+      {gameCollection.map((game, i) => 
+        <Game key={game.title + i} game={game} 
         />
       )}
     </div>
