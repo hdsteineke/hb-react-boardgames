@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { createGame } from './services/fetch-utils';
-import ListPage from './ListPage';
 
 export default function CreatePage() {
   // you'll need the history hook from react-router-dom to do your redirecting in the handleSubmit
@@ -49,7 +48,7 @@ export default function CreatePage() {
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select onChange={e => setGenre(e.target.value)} required>
+          <select value={genre} onChange={e => setGenre(e.target.value)} required>
             <option value='1'>Tile-laying</option>
             <option value='2'>Economic</option>
             <option value='3'>War</option>

@@ -14,7 +14,7 @@ export default function ListPage({ boardgames }) {
       setGameCollection(gameData);
     }
     fetch();
-  }, [gameCollection]);
+  }, []);
 
   return (
     <div className='list-games'>
