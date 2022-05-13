@@ -15,30 +15,31 @@ export default function UpdatePage() {
       setGame(gameData);
     }
     fetch();
-  }, []);
+  }, [id]);
+
 
 
   return (
     <div className='create'>
       {/* on submit, call your handleSubmit function */}
-      <form>
+      <form onSubmit={e => setGame(e.target.value)}>
         <h2>Edit board game</h2>
         <label>
             Title
           {/* on change, set the title in state */}
-          <input value={game.title} required name='title' />
+          <input onChange={e => setGame({ ...game, title: e.target.value })} value={game.title} required name='title' />
         </label>
         <label>
             Genre
           {/* on change, set the genre in state */}
           <select required>
-            <option value={game.genre}>Tile-laying</option>
-            <option value={game.genre}>Economic</option>
-            <option value={game.genre} >War</option>
-            <option value={game.genre}>Card</option>
-            <option value={game.genre}>Abstract</option>
-            <option value={game.genre}>Cooperative</option>
-            <option value={game.genre}>Solo</option>
+            <option value={'1'}>Tile-laying</option>
+            <option value={'2'}>Economic</option>
+            <option value={'2'} >War</option>
+            <option value={'3'}>Card</option>
+            <option value={'4'}>Abstract</option>
+            <option value={'5'}>Cooperative</option>
+            <option value={'6'}>Solo</option>
           </select>
         </label>
         <label>
@@ -61,7 +62,7 @@ export default function UpdatePage() {
           {/* on change, set the description in state */}
           <textarea value={game.description} required name='max_players' />
         </label>
-        <button>Create game</button>
+        <button>Update game</button>
       </form>
     </div>
   );
