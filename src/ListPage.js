@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getGames } from './services/fetch-utils';
 import Game from './Game';
 
-export default function ListPage({ boardgames }) {
+export default function ListPage() {
   // you'll need some state to hold onto the array of games
   const [gameCollection, setGameCollection] = useState([]);
 

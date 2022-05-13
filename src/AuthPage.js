@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { signIn, signUp } from './services/fetch-utils.js';
-import { getUser } from './services/fetch-utils.js';
 
 export default function AuthPage({ setUser }) {
   // you'll need to track the form state of the email and password
