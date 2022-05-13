@@ -25,7 +25,7 @@ export default function CreatePage() {
     e.preventDefault();
 
     // create a game
-    const newGame = await createGame({
+    await createGame({
       title,
       genre,
       designer,
@@ -33,8 +33,10 @@ export default function CreatePage() {
       min_players: minPlayers,
       max_players: maxPlayers
     });
+
+
     // use history.push to send the user to the list page
-    history.push('./board-games');
+    history.push('/board-games');
   }
 
   return (

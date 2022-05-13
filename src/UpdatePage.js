@@ -24,7 +24,7 @@ export default function UpdatePage() {
     e.preventDefault();
 
     // create a game
-    const updatedGame = await updateGame(id, {
+    await updateGame(id, {
       title: game.title,
       genre: game.genre,
       designer: game.designer,
@@ -33,12 +33,8 @@ export default function UpdatePage() {
       max_players: game.maxPlayers
     }
     );
-
-    // setGame(updatedGame);
     
-
-    // use history.push to send the user to the list page
-    history.push('./board-games');
+    history.push('/board-games');
   }
 
 
