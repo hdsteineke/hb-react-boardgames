@@ -1,6 +1,7 @@
 import { client, checkError } from './client';
 
 export function getUser() {
+
   return client.auth.session();
 
 }
@@ -55,3 +56,10 @@ export async function getGameById(id) {
 
   return checkError(response);    
 }
+
+export async function updateGame(id, newGame) {
+  const response = await client.from('board_games').update(newGame).match({ id });
+
+  return checkError(response);
+}
+
