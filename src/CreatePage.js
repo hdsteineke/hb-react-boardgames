@@ -16,8 +16,8 @@ export default function CreatePage() {
   const [genre, setGenre] = useState('');
   const [designer, setDesigner] = useState('');
   const [description, setDescription] = useState('');
-  const [minPlayers, setMinPlayers] = useState(1);
-  const [maxPlayers, setMaxPlayers] = useState(1);
+  const [minPlayers, setMinPlayers] = useState('');
+  const [maxPlayers, setMaxPlayers] = useState('');
   const history = useHistory();
 
 
@@ -33,7 +33,6 @@ export default function CreatePage() {
       min_players: minPlayers,
       max_players: maxPlayers
     });
-
     // use history.push to send the user to the list page
     history.push('./board-games');
   }

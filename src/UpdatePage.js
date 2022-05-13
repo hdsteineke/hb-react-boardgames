@@ -34,7 +34,7 @@ export default function UpdatePage() {
     }
     );
 
-    setGame(updatedGame);
+    // setGame(updatedGame);
     
 
     // use history.push to send the user to the list page
@@ -55,14 +55,14 @@ export default function UpdatePage() {
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select onChange={e => setGame({ ...game, genre: e.target.value })} required>
-            <option value={'1'}>Tile-laying</option>
-            <option value={'2'}>Economic</option>
-            <option value={'3'} >War</option>
-            <option value={'4'}>Card</option>
-            <option value={'5'}>Abstract</option>
-            <option value={'6'}>Cooperative</option>
-            <option value={'7'}>Solo</option>
+          <select value={game.genre} onChange={e => setGame({ ...game, genre: e.target.value })} required>
+            <option value='tile-laying'>Tile-laying</option>
+            <option value='economic'>Economic</option>
+            <option value='war'>War</option>
+            <option value='card'>Card</option>
+            <option value='abstract'>Abstract</option>
+            <option value='cooperative'>Cooperative</option>
+            <option value='solo'>Solo</option>
           </select>
         </label>
         <label>
