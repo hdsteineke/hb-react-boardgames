@@ -13,7 +13,7 @@ export default function CreatePage() {
     // minPlayers;
     // maxPlayers;
   const [title, setTitle] = useState('');
-  const [genre, setGenre] = useState(1);
+  const [genre, setGenre] = useState('');
   const [designer, setDesigner] = useState('');
   const [description, setDescription] = useState('');
   const [minPlayers, setMinPlayers] = useState(1);
@@ -51,14 +51,14 @@ export default function CreatePage() {
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select value={genre} onChange={e => setGenre(e.target.value)} required>
-            <option value='1'>Tile-laying</option>
-            <option value='2'>Economic</option>
-            <option value='3'>War</option>
-            <option value='4'>Card</option>
-            <option value='6'>Abstract</option>
-            <option value='7'>Cooperative</option>
-            <option value='8'>Solo</option>
+          <select value={genre} onChange={e => setGenre(e.target.value)} required name='genre'>
+            <option value='tile-laying'>Tile-laying</option>
+            <option value='economic'>Economic</option>
+            <option value='war'>War</option>
+            <option value='card'>Card</option>
+            <option value='abstract'>Abstract</option>
+            <option value='cooperative'>Cooperative</option>
+            <option value='solo'>Solo</option>
           </select>
         </label>
         <label>
