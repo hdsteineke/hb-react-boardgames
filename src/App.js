@@ -43,7 +43,7 @@ export default function App() {
         <header>
           {/* if there is a user in state, render out a link to the board games list, the create page, and add a button to let the user logout */}
           {user
-            ? <nav>
+            && <nav>
               <ul>
                 <li>
                   <NavLink exact activeClassName="current-page" to="/board-games">Home</NavLink>
@@ -52,9 +52,9 @@ export default function App() {
                   <NavLink exact activeClassName="current-page" to="/create">Add Game</NavLink>
                 </li>
               </ul>
+              <button onClick={handleLogout}>Logout</button>
             </nav>
-            : <AuthPage setUser={setUser} />}
-          <button onClick={handleLogout}>Logout</button>
+          }
         </header>
         <main>
           <Switch>
@@ -64,8 +64,8 @@ export default function App() {
                 ? <Redirect to = '/board-games'/>
                 : <AuthPage setUser={setUser} />
               }
-              
             </Route>
+
             <Route exact path="/board-games">
               {/* if there is a user, render the board games list. Otherwise, redirect to the home route/auth page */}
               {user 
